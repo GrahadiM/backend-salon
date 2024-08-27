@@ -75,6 +75,18 @@ class CategorySeeder extends Seeder
             'thumbnail'     => 'nail_art.webp',
         ]);
 
+        Category::create([
+            'name'          => Str::upper('Menu Paketan'),
+            'slug'          => Str::slug('menu_paketan'),
+            'thumbnail'     => 'menu_paketan.webp',
+        ]);
+
+        Category::create([
+            'name'          => Str::upper('Morning Charge'),
+            'slug'          => Str::slug('morning_charge'),
+            'thumbnail'     => 'morning_charge.webp',
+        ]);
+
 
         // // 1
         // Category::create([

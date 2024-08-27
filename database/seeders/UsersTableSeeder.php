@@ -33,6 +33,18 @@ class UsersTableSeeder extends Seeder
         $roleAdmin->syncPermissions($permissionsAdmin);
         $admin->assignRole([$roleAdmin->id]);
 
+        $owner = User::create([
+            'name'              => 'Owner',
+            'phone'             => '85767113554',
+            'username'          => 'owner',
+            'email'             => 'owner@test.com',
+            'password'          => bcrypt('password'),
+            'email_verified_at' => now(),
+            'remember_token'    => Str::random(10),
+        ]);
+        $roleAdmin->syncPermissions($permissionsAdmin);
+        $owner->assignRole([$roleAdmin->id]);
+
         $user = User::create([
             'name'              => 'Customer',
             'phone'             => '85767113554',
