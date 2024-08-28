@@ -97,6 +97,12 @@
                     </div>
                 </li>
                 <li class="menu-category">
+                    <a href="{{ route('fe.booking') }}" class="menu-title">Book Now</a>
+                </li>
+                <li class="menu-category">
+                    <a href="{{ route('fe.reservation') }}" class="menu-title">Reservation Now</a>
+                </li>
+                <li class="menu-category">
                     <a href="{{ route('fe.contact') }}" class="menu-title">Contact Us</a>
                 </li>
                 @auth

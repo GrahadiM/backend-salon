@@ -189,7 +189,7 @@ class FrontendController extends Controller
         $data->note             = $request->note;
         $data->status           = 'UNPAID';
         $data->payment_status   = 1;
-        $data->tgl_pesanan      = now();
+        $data->created_at       = now();
         $data->link_pembayaran  = $request->link_pembayaran;
 
         if ($tf = $request->file('tf')) {
@@ -273,5 +273,92 @@ class FrontendController extends Controller
         ]);
 
         return redirect()->route('fe.profile')->with('success', 'Password berhasil diupdate!');
+    }
+
+    public function booking()
+    {
+        $data['packages'] = Product::where('category_id', 11)->get();
+        return view('fe.booking', $data);
+    }
+    public function bookingAdd(Request $request)
+    {
+        $request->validate([
+            'tf' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $product = Product::find($request->product_id);
+
+        $order                  = new Order;
+        $order->customer_id     = Auth::user()->id;
+        $order->code_order      = 'TRX-'.mt_rand(00000, 99999).time();
+        $order->snap_token      = $request->snap_token == NULL ? mt_rand(00000, 99999).time() : $request->snap_token;
+        $order->address         = $request->address;
+        $order->total_price     = $product->price;
+        $order->dp_price        = $product->price/2;
+        $order->note            = $request->note;
+        $order->status          = 'UNPAID';
+        $order->payment_status  = 1;
+        $order->date_start      = $request->date_start;
+        $order->created_at      = now();
+        if ($tf = $request->file('tf')) {
+            $destinationPath    = 'images/tf/';
+            $transferImage      = date('YmdHis') . "." . $tf->getClientOriginalExtension();
+            $tf->move($destinationPath, $transferImage);
+            $order->tf          = $transferImage;
+        }
+        $order->save();
+
+        $op                 = new OrderProduct;
+        $op->transaction_id = $order->id;
+        $op->product_id     = $request->product_id;
+        $op->qty            = $request->qty == NULL ? 1 : $request->qty;
+        $op->save();
+
+        return redirect()->route('fe.history')->with('success', 'Pemesanan berhasil dilakukan!');
+    }
+
+    public function reservation()
+    {
+        $data['packages'] = Product::where('category_id', 12)->get();
+        return view('fe.reservation', $data);
+    }
+
+
+    public function reservationAdd(Request $request)
+    {
+        dd($request->all());
+        $request->validate([
+            'tf' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $product = Product::find($request->product_id);
+
+        $order                  = new Order;
+        $order->customer_id     = Auth::user()->id;
+        $order->code_order      = 'TRX-'.mt_rand(00000, 99999).time();
+        $order->snap_token      = $request->snap_token == NULL ? mt_rand(00000, 99999).time() : $request->snap_token;
+        $order->address         = $request->address;
+        $order->total_price     = $product->price;
+        $order->dp_price        = $product->price/2;
+        $order->note            = $request->note;
+        $order->status          = 'UNPAID';
+        $order->payment_status  = 1;
+        $order->date_start      = $request->date_start;
+        $order->created_at      = now();
+        if ($tf = $request->file('tf')) {
+            $destinationPath    = 'images/tf/';
+            $transferImage      = date('YmdHis') . "." . $tf->getClientOriginalExtension();
+            $tf->move($destinationPath, $transferImage);
+            $order->tf          = $transferImage;
+        }
+        $order->save();
+
+        $op                 = new OrderProduct;
+        $op->transaction_id = $order->id;
+        $op->product_id     = $request->product_id;
+        $op->qty            = $request->qty == NULL ? 1 : $request->qty;
+        $op->save();
+
+        return redirect()->route('fe.history')->with('success', 'Pemesanan berhasil dilakukan!');
     }
 }

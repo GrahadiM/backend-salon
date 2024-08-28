@@ -78,11 +78,11 @@
                     <div class="col-md-9">
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="address" class="form-label">Alamat Tujuan</label>
-                                <input type="text" class="form-control" id="address" name="address" placeholder="Jakarta Utara, DKI Jakarta, Indonesia" required>
+                                <label for="address" class="form-label">Alamat</label>
+                                <input type="text" class="form-control" id="address" name="address" value="Jl. Boulevard Hijau Raya No.56 Blok A3, RT.006/RW.009, Pejuang, Kecamatan Medan Satria, Bekasi Regency, Jawa Barat 17131" required>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="tf" class="form-label">Bukti Transfer</label>
+                                <label for="tf" class="form-label">Bukti Transfer/Pembayaran</label>
                                 <input type="file" class="form-control" id="tf" name="tf" placeholder="Bukti Transfer" required>
                             </div>
                         </div>

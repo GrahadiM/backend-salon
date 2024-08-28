@@ -15,6 +15,95 @@ class ProductTableSeeder extends Seeder
      */
     public function run()
     {
+        // Menu Biasa
+        Product::create([
+            'category_id'   => 2,
+            'name'          => Str::upper('CUCI atau KERAMAS'),
+            'thumbnail'     => 'daftar-layanan.png',
+            'price'         => 30000,
+            'price_end'     => 60000,
+            'body'          => Str::upper('CUCI atau KERAMAS'),
+            'favorite'      => 'false',
+        ]);
+
+        Product::create([
+            'category_id'   => 2,
+            'name'          => Str::upper('DRY'),
+            'thumbnail'     => 'daftar-layanan.png',
+            'price'         => 10000,
+            'price_end'     => 30000,
+            'body'          => Str::upper('DRY'),
+            'favorite'      => 'false',
+        ]);
+
+        Product::create([
+            'category_id'   => 2,
+            'name'          => Str::upper('CUCI + HAIR TONIC'),
+            'thumbnail'     => 'daftar-layanan.png',
+            'price'         => 15000,
+            'price_end'     => 45000,
+            'body'          => Str::upper('CUCI + HAIR TONIC'),
+            'favorite'      => 'false',
+        ]);
+
+        Product::create([
+            'category_id'   => 2,
+            'name'          => Str::upper('CUCI + HAIR TONIC + DRY'),
+            'thumbnail'     => 'daftar-layanan.png',
+            'price'         => 20000,
+            'price_end'     => 60000,
+            'body'          => Str::upper('CUCI + HAIR TONIC + DRY'),
+            'favorite'      => 'false',
+        ]);
+
+        Product::create([
+            'category_id'   => 1,
+            'name'          => Str::upper('GUNTING + CUCI + TONIC (PRIA)'),
+            'thumbnail'     => 'daftar-layanan.png',
+            'price'         => 50000,
+            'body'          => Str::upper('GUNTING + CUCI + TONIC (PRIA)'),
+            'favorite'      => 'false',
+        ]);
+
+        Product::create([
+            'category_id'   => 1,
+            'name'          => Str::upper('GUNTING + CUCI + TONIC + DRY (WANITA)'),
+            'thumbnail'     => 'daftar-layanan.png',
+            'price'         => 75000,
+            'body'          => Str::upper('GUNTING + CUCI + TONIC + DRY (WANITA)'),
+            'favorite'      => 'false',
+        ]);
+
+        Product::create([
+            'category_id'   => 2,
+            'name'          => Str::upper('CUCI + HAIR TONIC + CATOK'),
+            'thumbnail'     => 'daftar-layanan.png',
+            'price'         => 55000,
+            'price_end'     => 75000,
+            'body'          => Str::upper('CUCI + HAIR TONIC + CATOK'),
+            'favorite'      => 'false',
+        ]);
+
+        Product::create([
+            'category_id'   => 2,
+            'name'          => Str::upper('CUCI + HAIR TONIC + CATOK SPIRAL/VARIASI'),
+            'thumbnail'     => 'daftar-layanan.png',
+            'price'         => 65000,
+            'price_end'     => 85000,
+            'body'          => Str::upper('CUCI + HAIR TONIC + CATOK SPIRAL/VARIASI'),
+            'favorite'      => 'false',
+        ]);
+
+        Product::create([
+            'category_id'   => 2,
+            'name'          => Str::upper('CUCI + HAIR TONIC + BLOW NATURAL'),
+            'thumbnail'     => 'daftar-layanan.png',
+            'price'         => 50000,
+            'price_end'     => 70000,
+            'body'          => Str::upper('CUCI + HAIR TONIC + BLOW NATURAL'),
+            'favorite'      => 'false',
+        ]);
+
         // Menu Paket
         Product::create([
             'category_id'   => 11,

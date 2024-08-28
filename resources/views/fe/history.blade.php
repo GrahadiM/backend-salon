@@ -31,7 +31,7 @@
                                 <td>{{ __('Rp.').number_format($item->total_price,2,',','.') }}</td>
                                 <td>{{ $item->address }}</td>
                                 <td>{{ $item->status }}</td>
-                                <td>{{ $item->tgl_pesanan }}</td>
+                                <td>{{ Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $item->date_start)->translatedFormat('l, d F Y H:i') ?? $item->created_at }}</td>
                                 <td>
                                     <div class="btn-group" role="group" aria-label="Action">
                                         <button type="button" class="btn btn-primary btn-action" onclick="event.preventDefault(); document.getElementById('historyProduct-form-{{ $item->id }}').submit();">

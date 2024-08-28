@@ -15,12 +15,12 @@ class Order extends Model
 
     public function getCreatedAtAttribute($date)
     {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->translatedFormat('l, d/m/Y H:i');
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->translatedFormat('l, d F Y H:i');
     }
 
     public function getUpdatedAtAttribute($date)
     {
-        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->translatedFormat('l, d/m/Y H:i');
+        return Carbon::createFromFormat('Y-m-d H:i:s', $date)->translatedFormat('l, d F Y H:i');
     }
 
     public function customer()

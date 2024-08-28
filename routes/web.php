@@ -28,6 +28,10 @@ Route::controller(App\Http\Controllers\FrontendController::class)->name('fe.')->
         // Checkout
         Route::post('/checkout', 'checkout')->name('checkout');
         Route::post('/pay', 'pay')->name('pay');
+        Route::get('/booking', 'booking')->name('booking');
+        Route::post('/booking', 'bookingAdd')->name('bookingAdd');
+        Route::get('/reservation', 'reservation')->name('reservation');
+        Route::post('/reservation', 'reservationAdd')->name('reservationAdd');
     });
 });
 
