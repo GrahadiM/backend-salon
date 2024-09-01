@@ -24,10 +24,10 @@
                 </li>
             </ul>
             <div class="header-alert-news">
-                <p>
+                {{-- <p>
                     <b>Promo Voucher Diskon</b>
                     Hingga Rp.10.000,-
-                </p>
+                </p> --}}
             </div>
             <div class="header-top-actions">
                 <select name="currency">
@@ -97,10 +97,10 @@
                     </div>
                 </li>
                 <li class="menu-category">
-                    <a href="{{ route('fe.booking') }}" class="menu-title">Book Now</a>
+                    <a href="{{ route('fe.reservation') }}" class="menu-title">Reservation Make Up</a>
                 </li>
                 <li class="menu-category">
-                    <a href="{{ route('fe.reservation') }}" class="menu-title">Reservation Now</a>
+                    <a href="{{ route('fe.booking') }}" class="menu-title">Booking Now</a>
                 </li>
                 <li class="menu-category">
                     <a href="{{ route('fe.contact') }}" class="menu-title">Contact Us</a>
